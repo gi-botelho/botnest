@@ -99,7 +99,7 @@ const ChatPage = () => {
       </div>
 
       {/* Chat Messages */}
-      <div className="flex-1 container mx-auto px-4 py-6">
+      <div className="flex-1 container mx-auto px-4 py-6 bg-gray-800">
         <ScrollArea className="h-full">
           <div className="space-y-4 pb-4">
             {messages.map((message) => (
@@ -126,7 +126,7 @@ const ChatPage = () => {
                   }`}>
                     <p className="text-sm leading-relaxed">{message.text}</p>
                   </div>
-                  <span className="text-xs text-gray-500 mt-1 px-2">
+                  <span className="text-xs text-gray-400 mt-1 px-2">
                     {formatTime(message.timestamp)}
                   </span>
                 </div>
