@@ -4,6 +4,7 @@ import { Send, Bot, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { useToast } from '@/hooks/use-toast';
 
 interface Message {
   id: string;
@@ -25,6 +26,7 @@ const ChatPage = () => {
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const { toast } = useToast();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -47,21 +49,64 @@ const ChatPage = () => {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const messageText = inputValue;
     setInputValue('');
     setIsTyping(true);
 
-    // Simular resposta da IA (aqui você conectará sua automação)
-    setTimeout(() => {
+    try {
+      console.log('Enviando mensagem para o webhook:', messageText);
+      
+      const response = await fetch('https://webhook.auriosai.com/webhook/uptakeChat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: messageText,
+          timestamp: new Date().toISOString(),
+          userId: 'user-' + Date.now(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Resposta do webhook:', data);
+
+      // Processar a resposta do webhook
+      const aiResponseText = data.response || data.message || 'Desculpe, não consegui processar sua mensagem.';
+      
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Obrigado pela sua mensagem! Esta é uma resposta simulada. Em breve, nossa IA estará processando suas solicitações em tempo real.',
+        text: aiResponseText,
         isUser: false,
         timestamp: new Date(),
       };
       
       setMessages(prev => [...prev, aiResponse]);
+      
+    } catch (error) {
+      console.error('Erro ao enviar mensagem para o webhook:', error);
+      
+      const errorResponse: Message = {
+        id: (Date.now() + 1).toString(),
+        text: 'Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente.',
+        isUser: false,
+        timestamp: new Date(),
+      };
+      
+      setMessages(prev => [...prev, errorResponse]);
+      
+      toast({
+        title: "Erro de Conexão",
+        description: "Não foi possível conectar com o servidor. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
       setIsTyping(false);
-    }, 2000);
+    }
   };
 
   const formatTime = (date: Date) => {
@@ -99,7 +144,7 @@ const ChatPage = () => {
       </div>
 
       {/* Chat Messages */}
-      <div className="flex-1 container mx-auto px-4 py-6 bg-gray-800">
+      <div className="flex-1 container mx-auto px-4 py-6">
         <ScrollArea className="h-full">
           <div className="space-y-4 pb-4">
             {messages.map((message) => (
@@ -126,7 +171,7 @@ const ChatPage = () => {
                   }`}>
                     <p className="text-sm leading-relaxed">{message.text}</p>
                   </div>
-                  <span className="text-xs text-gray-400 mt-1 px-2">
+                  <span className="text-xs text-gray-500 mt-1 px-2">
                     {formatTime(message.timestamp)}
                   </span>
                 </div>
