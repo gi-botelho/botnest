@@ -55,28 +55,53 @@ const ChatPage = () => {
 
     try {
       console.log('Enviando mensagem para o webhook:', messageText);
+      console.log('URL do webhook:', 'https://webhook.auriosai.com/webhook/uptakeChat');
       
+      const requestData = {
+        message: messageText,
+        timestamp: new Date().toISOString(),
+        userId: 'user-' + Date.now(),
+      };
+      
+      console.log('Dados da requisição:', requestData);
+
       const response = await fetch('https://webhook.auriosai.com/webhook/uptakeChat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify({
-          message: messageText,
-          timestamp: new Date().toISOString(),
-          userId: 'user-' + Date.now(),
-        }),
+        body: JSON.stringify(requestData),
       });
 
+      console.log('Status da resposta:', response.status);
+      console.log('Headers da resposta:', response.headers);
+
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorText = await response.text();
+        console.error('Erro HTTP:', response.status, errorText);
+        throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
       }
 
       const data = await response.json();
-      console.log('Resposta do webhook:', data);
+      console.log('Resposta do webhook recebida:', data);
 
-      // Processar a resposta do webhook
-      const aiResponseText = data.response || data.message || 'Desculpe, não consegui processar sua mensagem.';
+      // Processar a resposta do webhook - verificar diferentes formatos possíveis
+      let aiResponseText = 'Desculpe, não consegui processar sua mensagem.';
+      
+      if (data.response) {
+        aiResponseText = data.response;
+      } else if (data.message) {
+        aiResponseText = data.message;
+      } else if (data.text) {
+        aiResponseText = data.text;
+      } else if (data.reply) {
+        aiResponseText = data.reply;
+      } else if (typeof data === 'string') {
+        aiResponseText = data;
+      }
+      
+      console.log('Texto da resposta processado:', aiResponseText);
       
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
@@ -90,9 +115,21 @@ const ChatPage = () => {
     } catch (error) {
       console.error('Erro ao enviar mensagem para o webhook:', error);
       
+      let errorMessage = 'Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente.';
+      
+      if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+        errorMessage = 'Erro de conectividade. Verifique sua conexão com a internet e tente novamente.';
+        console.error('Erro de CORS ou conectividade detectado');
+      } else if (error instanceof Error) {
+        console.error('Detalhes do erro:', error.message);
+        if (error.message.includes('500')) {
+          errorMessage = 'O servidor está com problemas internos. Tente novamente em alguns instantes.';
+        }
+      }
+      
       const errorResponse: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente.',
+        text: errorMessage,
         isUser: false,
         timestamp: new Date(),
       };
