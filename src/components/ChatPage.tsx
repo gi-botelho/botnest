@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, MessageCircle, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -158,17 +157,12 @@ const ChatPage = () => {
       {/* Header */}
       <div className="bg-[#0A014F] shadow-lg border-b-4 border-[#EEF36A]">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-between">
             <img 
               src="/lovable-uploads/fb0c58e3-a882-42fa-945a-aad3f487c103.png" 
               alt="Uptake Education" 
               className="h-12 w-auto"
             />
-            <div className="flex-1">
-              <p className="text-white text-sm">
-                Inteligência artificial para educação
-              </p>
-            </div>
             <div className="flex items-center space-x-2 text-green-400">
               <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
               <span className="text-sm font-medium">Online</span>
@@ -178,7 +172,7 @@ const ChatPage = () => {
       </div>
 
       {/* Chat Messages */}
-      <div className="flex-1 container mx-auto px-4 py-6 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <div className="flex-1 container mx-auto px-4 py-6">
         <ScrollArea className="h-full">
           <div className="space-y-6 pb-4">
             {messages.map((message) => (
