@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Bot, User } from 'lucide-react';
+import { Send, MessageCircle, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -178,34 +178,38 @@ const ChatPage = () => {
       </div>
 
       {/* Chat Messages */}
-      <div className="flex-1 container mx-auto px-4 py-6">
+      <div className="flex-1 container mx-auto px-4 py-6 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
         <ScrollArea className="h-full">
-          <div className="space-y-4 pb-4">
+          <div className="space-y-6 pb-4">
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`message-animation flex items-start space-x-3 ${
+                className={`message-animation flex items-start space-x-4 ${
                   message.isUser ? 'flex-row-reverse space-x-reverse' : ''
                 }`}
               >
-                <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${
+                <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center shadow-lg ${
                   message.isUser 
-                    ? 'bg-[#EEF36A] text-[#0A014F]' 
-                    : 'bg-[#0A014F] text-white'
+                    ? 'bg-gradient-to-br from-[#EEF36A] to-yellow-300 text-[#0A014F]' 
+                    : 'bg-gradient-to-br from-[#0A014F] to-indigo-700 text-white'
                 }`}>
-                  {message.isUser ? <User size={20} /> : <Bot size={20} />}
+                  {message.isUser ? (
+                    <MessageCircle size={24} className="drop-shadow-sm" />
+                  ) : (
+                    <Sparkles size={24} className="drop-shadow-sm" />
+                  )}
                 </div>
                 <div className={`flex flex-col max-w-xs lg:max-w-md ${
                   message.isUser ? 'items-end' : 'items-start'
                 }`}>
-                  <div className={`px-4 py-3 rounded-2xl shadow-md ${
+                  <div className={`px-5 py-4 rounded-2xl shadow-lg backdrop-blur-sm border ${
                     message.isUser
-                      ? 'bg-[#EEF36A] text-[#0A014F] rounded-br-none'
-                      : 'bg-[#0A014F] text-white rounded-bl-none'
+                      ? 'bg-gradient-to-br from-[#EEF36A] to-yellow-200 text-[#0A014F] rounded-br-md border-yellow-300/30'
+                      : 'bg-gradient-to-br from-white to-slate-50 text-slate-800 rounded-bl-md border-slate-200/50'
                   }`}>
-                    <p className="text-sm leading-relaxed">{message.text}</p>
+                    <p className="text-sm leading-relaxed font-medium">{message.text}</p>
                   </div>
-                  <span className="text-xs text-gray-500 mt-1 px-2">
+                  <span className="text-xs text-slate-500 mt-2 px-2 font-medium">
                     {formatTime(message.timestamp)}
                   </span>
                 </div>
@@ -214,15 +218,15 @@ const ChatPage = () => {
             
             {/* Typing Indicator */}
             {isTyping && (
-              <div className="flex items-start space-x-3 message-animation">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#0A014F] text-white flex items-center justify-center">
-                  <Bot size={20} />
+              <div className="flex items-start space-x-4 message-animation">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[#0A014F] to-indigo-700 text-white flex items-center justify-center shadow-lg">
+                  <Sparkles size={24} className="drop-shadow-sm" />
                 </div>
-                <div className="bg-[#0A014F] px-4 py-3 rounded-2xl rounded-bl-none shadow-md text-white">
-                  <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-white rounded-full typing-dot"></div>
-                    <div className="w-2 h-2 bg-white rounded-full typing-dot"></div>
-                    <div className="w-2 h-2 bg-white rounded-full typing-dot"></div>
+                <div className="bg-gradient-to-br from-white to-slate-50 px-5 py-4 rounded-2xl rounded-bl-md shadow-lg backdrop-blur-sm border border-slate-200/50">
+                  <div className="flex space-x-2">
+                    <div className="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
+                    <div className="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
+                    <div className="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
                   </div>
                 </div>
               </div>
@@ -233,7 +237,7 @@ const ChatPage = () => {
       </div>
 
       {/* Input Area */}
-      <div className="border-t bg-white shadow-lg">
+      <div className="border-t bg-white/80 backdrop-blur-sm shadow-lg">
         <div className="container mx-auto px-4 py-4">
           <form onSubmit={handleSendMessage} className="flex space-x-4">
             <div className="flex-1 relative">
@@ -242,14 +246,14 @@ const ChatPage = () => {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Digite sua mensagem..."
-                className="pr-12 py-3 text-base border-2 border-gray-200 focus:border-[#EEF36A] rounded-xl"
+                className="pr-12 py-3 text-base border-2 border-gray-200 focus:border-[#EEF36A] rounded-xl bg-white/90 backdrop-blur-sm"
                 disabled={isTyping}
               />
             </div>
             <Button
               type="submit"
               disabled={!inputValue.trim() || isTyping}
-              className="bg-[#0A014F] hover:bg-[#050027] text-white px-6 py-3 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50"
+              className="bg-gradient-to-r from-[#0A014F] to-indigo-700 hover:from-[#050027] hover:to-indigo-800 text-white px-6 py-3 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50"
             >
               <Send size={20} />
             </Button>
