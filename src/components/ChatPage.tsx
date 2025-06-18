@@ -156,26 +156,14 @@ const ChatPage = () => {
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-blue-50 to-white">
       {/* Header */}
-      <div className="bg-white shadow-lg border-b-4 border-[#EEF36A]">
+      <div className="bg-[#0A014F] shadow-lg">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-center">
             <img 
-              src="/lovable-uploads/761d61f6-b873-4336-9fff-a075dd5b3ba8.png" 
+              src="/lovable-uploads/fb0c58e3-a882-42fa-945a-aad3f487c103.png" 
               alt="Uptake Education" 
               className="h-12 w-auto"
             />
-            <div className="flex-1">
-              <h1 className="text-2xl font-bold text-[#0A014F]">
-                Assistente IA - Uptake Education
-              </h1>
-              <p className="text-gray-600 text-sm">
-                Inteligência artificial para educação
-              </p>
-            </div>
-            <div className="flex items-center space-x-2 text-green-500">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium">Online</span>
-            </div>
           </div>
         </div>
       </div>
@@ -203,8 +191,8 @@ const ChatPage = () => {
                 }`}>
                   <div className={`px-4 py-3 rounded-2xl shadow-md ${
                     message.isUser
-                      ? 'bg-[#0A014F] text-white rounded-br-none'
-                      : 'bg-white text-gray-800 rounded-bl-none border border-gray-200'
+                      ? 'bg-[#EEF36A] text-[#0A014F] rounded-br-none'
+                      : 'bg-[#0A014F] text-white rounded-bl-none'
                   }`}>
                     <p className="text-sm leading-relaxed">{message.text}</p>
                   </div>
@@ -221,11 +209,11 @@ const ChatPage = () => {
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#0A014F] text-white flex items-center justify-center">
                   <Bot size={20} />
                 </div>
-                <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-none shadow-md border border-gray-200">
+                <div className="bg-[#0A014F] px-4 py-3 rounded-2xl rounded-bl-none shadow-md text-white">
                   <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                    <div className="w-2 h-2 bg-white rounded-full typing-dot"></div>
+                    <div className="w-2 h-2 bg-white rounded-full typing-dot"></div>
+                    <div className="w-2 h-2 bg-white rounded-full typing-dot"></div>
                   </div>
                 </div>
               </div>
