@@ -163,7 +163,7 @@ const ChatPage = () => {
               alt="Uptake Education" 
               className="h-12 w-auto"
             />
-            <div className="flex items-center space-x-2 text-green-400">
+            <div className="flex items-center space-x-2 text-white">
               <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
               <span className="text-sm font-medium">Online</span>
             </div>
@@ -190,7 +190,7 @@ const ChatPage = () => {
                   {message.isUser ? (
                     <MessageCircle size={24} className="drop-shadow-sm" />
                   ) : (
-                    <Sparkles size={24} className="drop-shadow-sm" />
+                    <MessageCircle size={24} className="drop-shadow-sm" />
                   )}
                 </div>
                 <div className={`flex flex-col max-w-xs lg:max-w-md ${
@@ -199,7 +199,7 @@ const ChatPage = () => {
                   <div className={`px-5 py-4 rounded-2xl shadow-lg backdrop-blur-sm border ${
                     message.isUser
                       ? 'bg-gradient-to-br from-[#EEF36A] to-yellow-200 text-[#0A014F] rounded-br-md border-yellow-300/30'
-                      : 'bg-gradient-to-br from-white to-slate-50 text-slate-800 rounded-bl-md border-slate-200/50'
+                      : 'bg-gradient-to-br from-[#0A014F] to-indigo-700 text-white rounded-bl-md border-blue-300/30'
                   }`}>
                     <p className="text-sm leading-relaxed font-medium">{message.text}</p>
                   </div>
@@ -214,13 +214,13 @@ const ChatPage = () => {
             {isTyping && (
               <div className="flex items-start space-x-4 message-animation">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[#0A014F] to-indigo-700 text-white flex items-center justify-center shadow-lg">
-                  <Sparkles size={24} className="drop-shadow-sm" />
+                  <MessageCircle size={24} className="drop-shadow-sm" />
                 </div>
-                <div className="bg-gradient-to-br from-white to-slate-50 px-5 py-4 rounded-2xl rounded-bl-md shadow-lg backdrop-blur-sm border border-slate-200/50">
+                <div className="bg-gradient-to-br from-[#0A014F] to-indigo-700 text-white px-5 py-4 rounded-2xl rounded-bl-md shadow-lg backdrop-blur-sm border border-blue-300/30">
                   <div className="flex space-x-2">
-                    <div className="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
-                    <div className="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
-                    <div className="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
+                    <div className="w-2 h-2 bg-white rounded-full typing-dot"></div>
+                    <div className="w-2 h-2 bg-white rounded-full typing-dot"></div>
+                    <div className="w-2 h-2 bg-white rounded-full typing-dot"></div>
                   </div>
                 </div>
               </div>
