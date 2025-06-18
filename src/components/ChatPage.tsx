@@ -156,14 +156,23 @@ const ChatPage = () => {
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-blue-50 to-white">
       {/* Header */}
-      <div className="bg-[#0A014F] shadow-lg">
+      <div className="bg-[#0A014F] shadow-lg border-b-4 border-[#EEF36A]">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center space-x-4">
             <img 
               src="/lovable-uploads/fb0c58e3-a882-42fa-945a-aad3f487c103.png" 
               alt="Uptake Education" 
               className="h-12 w-auto"
             />
+            <div className="flex-1">
+              <p className="text-white text-sm">
+                Inteligência artificial para educação
+              </p>
+            </div>
+            <div className="flex items-center space-x-2 text-green-400">
+              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium">Online</span>
+            </div>
           </div>
         </div>
       </div>
