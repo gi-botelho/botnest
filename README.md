@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+# BotNest Studio
 
-## Project info
+Uma plataforma SaaS moderna para criação e gerenciamento de chatbots inteligentes.
 
-**URL**: https://lovable.dev/projects/2f4b53fc-97cf-41cc-a90d-30faf3feab8f
+## Sobre o Projeto
 
-## How can I edit this code?
+BotNest Studio é uma aplicação web desenvolvida com React, TypeScript e Tailwind CSS que permite aos usuários criar, configurar e gerenciar chatbots de forma intuitiva e eficiente.
 
-There are several ways of editing your application.
+## Como executar o projeto
 
-**Use Lovable**
+## Pré-requisitos
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2f4b53fc-97cf-41cc-a90d-30faf3feab8f) and start prompting.
+- Node.js (versão 18 ou superior)
+- npm ou yarn
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Instalação e Execução
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 1. Clone o repositório
+git clone <URL_DO_SEU_REPOSITORIO>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Navegue até o diretório do projeto
+cd botnest-studio
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Instale as dependências
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O projeto estará disponível em `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Scripts Disponíveis
 
-**Use GitHub Codespaces**
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Gera a build de produção
+- `npm run preview` - Visualiza a build de produção
+- `npm run lint` - Executa o linter
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Tecnologias Utilizadas
 
-## What technologies are used for this project?
+- **React 18** - Biblioteca para interfaces de usuário
+- **TypeScript** - Superset tipado do JavaScript
+- **Vite** - Build tool e servidor de desenvolvimento
+- **Tailwind CSS** - Framework CSS utilitário
+- **Radix UI** - Componentes acessíveis
+- **Lucide React** - Ícones
+- **React Hook Form** - Gerenciamento de formulários
+- **React Router** - Roteamento
 
-This project is built with:
+## Estrutura do Projeto
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2f4b53fc-97cf-41cc-a90d-30faf3feab8f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```
+src/
+├── components/     # Componentes reutilizáveis
+├── pages/         # Páginas da aplicação
+├── hooks/         # Custom hooks
+├── lib/           # Utilitários e configurações
+├── styles/        # Estilos globais
+└── config/        # Configurações da aplicação
+```

@@ -12,89 +12,86 @@
     --uptake-blue-light: rgba(10, 1, 79, 0.1);
     --uptake-blue-dark: #050027;
     
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Design neutro - base branca e cinza claro */
+    --background: 0 0% 98%; /* Fundo off-white suave */
+    --foreground: 0 0% 15%; /* Texto cinza escuro */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* Cards brancos puros */
+    --card-foreground: 0 0% 15%; /* Texto cinza escuro nos cards */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* Popovers brancos */
+    --popover-foreground: 0 0% 15%; /* Texto cinza escuro nos popovers */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 25%; /* Cinza escuro para primary */
+    --primary-foreground: 0 0% 100%; /* Texto branco no primary */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96%; /* Cinza muito claro para elementos secundários */
+    --secondary-foreground: 0 0% 25%; /* Texto cinza escuro */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%; /* Cinza muito claro para elementos muted */
+    --muted-foreground: 0 0% 45%; /* Texto cinza médio */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 0% 94%; /* Cinza claro para accent */
+    --accent-foreground: 0 0% 25%; /* Texto cinza escuro */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 75%; /* Bordas cinza mais escuro */
+    --input: 0 0% 100%; /* Inputs brancos */
+    --ring: 0 0% 25%; /* Ring cinza escuro */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Bordas suavemente arredondadas */
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 100%; /* Sidebar branca */
+    --sidebar-foreground: 0 0% 15%; /* Texto cinza escuro na sidebar */
+    --sidebar-primary: 0 0% 25%; /* Cinza escuro para primary */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%; /* Cinza muito claro */
+    --sidebar-accent-foreground: 0 0% 25%;
+    --sidebar-border: 0 0% 88%; /* Bordas cinza claro */
+    --sidebar-ring: 0 0% 25%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Tema escuro com fundo preto elegante */
+    --background: 0 0% 0%; /* Preto puro */
+    --foreground: 0 0% 95%; /* Branco suave */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%; /* Cinza muito escuro para cards */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 18%; /* Cinza médio para popovers */
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217 91% 60%; /* Azul vibrante mantido */
+    --primary-foreground: 0 0% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 22%; /* Cinza médio para elementos secundários */
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 20%; /* Cinza médio para elementos muted */
+    --muted-foreground: 0 0% 70%; /* Texto secundário em cinza médio */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 22%; /* Accent em cinza médio */
+    --accent-foreground: 0 0% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 63% 50%; /* Vermelho mais suave */
+    --destructive-foreground: 0 0% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 25%; /* Bordas em cinza claro */
+    --input: 0 0% 18%; /* Inputs em cinza escuro */
+    --ring: 217 91% 60%; /* Ring mantido azul */
+    
+    /* Sidebar com tons de cinza harmoniosos */
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 240 10% 3.9%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 6% 20%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -105,6 +102,21 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Garantir que o tema escuro seja aplicado corretamente */
+  .dark body {
+    background-color: hsl(0 0% 0%);
+    color: hsl(0 0% 95%);
+  }
+  
+  .light body {
+    background-color: hsl(0 0% 100%);
+    background-image: url('/fundo-abstrato-claro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: hsl(222.2 84% 4.9%);
   }
 }
 
@@ -129,6 +141,38 @@
   }
 }
 
+/* Animação de brilho sutil para o header */
+@keyframes header-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Animação de flutuação suave */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Animação de pulsação suave */
+@keyframes soft-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
 .message-animation {
   animation: message-appear 0.3s ease-out;
 }
@@ -143,4 +187,165 @@
 
 .typing-dot:nth-child(3) {
   animation-delay: 0.4s;
+}
+
+/* Classes para animações do header */
+.header-shimmer {
+  animation: header-shimmer 3s ease-in-out infinite;
+}
+
+/* Estilo do cabeçalho com fundo branco puro */
+.light .header-card {
+  background: hsl(var(--card)) !important;
+  box-shadow: 
+    0 4px 8px rgba(108, 117, 125, 0.1),
+    0 1px 3px rgba(173, 181, 189, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border: 1px solid hsl(var(--border)) !important;
+  backdrop-filter: blur(10px);
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.soft-pulse {
+  animation: soft-pulse 2s ease-in-out infinite;
+}
+
+/* ===== NEOMORPHISM SUAVE CLASSES ===== */
+/* Aplicado apenas no tema claro */
+.light .neo-card {
+  background: hsl(var(--card));
+  box-shadow: 
+    15px 15px 30px rgba(108, 117, 125, 0.15),
+    -15px -15px 30px rgba(248, 249, 250, 0.8),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 4px rgba(173, 181, 189, 0.1);
+  border: 1px solid hsl(var(--border));
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.light .neo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    transparent 100%);
+}
+
+.light .neo-card:hover {
+  background: hsl(var(--card));
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 
+    0 10px 25px rgba(108, 117, 125, 0.3),
+    0 0 20px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    15px 15px 30px rgba(108, 117, 125, 0.15),
+    -15px -15px 30px rgba(248, 249, 250, 0.8);
+  transform: translateY(-2px);
+}
+
+.light .neo-button {
+  background: hsl(var(--card));
+  box-shadow: 
+    6px 6px 12px rgba(108, 117, 125, 0.15),
+    -6px -6px 12px rgba(255, 255, 255, 0.8),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(206, 212, 218, 0.3);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.light .neo-button:hover {
+  background: hsl(var(--card));
+  box-shadow: 
+    6px 6px 12px rgba(108, 117, 125, 0.2),
+    -6px -6px 12px rgba(255, 255, 255, 0.9),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.7),
+    0 0 20px rgba(206, 212, 218, 0.2);
+  border: 1px solid hsl(var(--border));
+  transform: translateY(-1px);
+}
+
+.light .neo-button:active {
+  box-shadow: 
+    inset 3px 3px 6px rgba(197, 197, 200, 0.4),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+  transform: translateY(0);
+}
+
+.light .neo-inset {
+  background: linear-gradient(145deg, #e0e0e4, #f0f0f3);
+  box-shadow: 
+    inset 6px 6px 12px rgba(197, 197, 200, 0.4),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+}
+
+.light .neo-raised {
+  background: linear-gradient(145deg, #f8f8fa, #e8e8ec);
+  box-shadow: 
+    10px 10px 20px rgba(190, 190, 193, 0.4),
+    -10px -10px 20px rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.light .neo-raised:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    12px 12px 24px rgba(190, 190, 193, 0.5),
+    -12px -12px 24px rgba(255, 255, 255, 0.9);
+}
+
+/* ===== DARK MODE CARD STYLES ===== */
+.dark .neo-card {
+  background: rgba(15, 15, 15, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .neo-button {
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  box-shadow: 
+    6px 6px 12px rgba(0, 0, 0, 0.4),
+    -6px -6px 12px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.dark .neo-button:hover {
+  box-shadow: 
+    6px 6px 12px rgba(0, 0, 0, 0.4),
+    -6px -6px 12px rgba(255, 255, 255, 0.05),
+    0 0 20px rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.dark .neo-button:active {
+  box-shadow: 
+    inset 3px 3px 6px rgba(0, 0, 0, 0.4),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.05);
+  transform: translateY(0);
+}
+
+.dark .neo-card:hover {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
