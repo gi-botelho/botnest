@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Dashboard from "@/components/Dashboard";
 import AgentRouter from "@/components/AgentRouter";
+import ChatPage from "@/components/ChatPage";
+import { uptakeConfig } from "@/config/agents";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/uptake" element={<ChatPage config={uptakeConfig} />} />
             <Route path="/agent/:agentId" element={<AgentRouter />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

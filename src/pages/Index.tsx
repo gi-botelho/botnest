@@ -1,9 +1,8 @@
 
-import ChatPage from '@/components/ChatPage';
-import { uptakeConfig } from '@/config/agents';
+import Dashboard from '@/components/Dashboard';
 
 const Index = () => {
-  return <ChatPage config={uptakeConfig} />;
+  return <Dashboard />;
 };
 
 export default Index;
